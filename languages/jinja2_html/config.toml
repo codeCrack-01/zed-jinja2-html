@@ -1,9 +1,9 @@
 name = "Jinja2 HTML"
-grammar = "jinja2-html"
+grammar = "jinja2_html"
 path_suffixes = ["j2", "jinja", "jinja2", "html.j2", "htm.j2", "html.jinja", "htm.jinja", "html.jinja2", "htm.jinja2"]
 line_comments = ["{#", "#}"]
 block_comment = ["{#", "#}"]
-language_servers = ["jinja2-html-lsp"]
+language_servers = ["jinja2_html_lsp"]
 auto_indent_using_last_non_empty_line = true
 brackets = [
   { start = "{", end = "}", close = true, newline = true },
@@ -38,8 +38,3 @@ allowed = true
 default_options = { tab_width = 2, print_width = 80 }
 plugins = ["@prettier/plugin-jinja-template"]
 
-[language_server]
-name = "jinja2-html-lsp"
-
-[snippets]
-enabled = true

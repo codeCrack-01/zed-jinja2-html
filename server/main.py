@@ -36,8 +36,12 @@ from lsprotocol.types import (
     FormattingOptions
 )
 
-from .completion_provider import Jinja2HTMLCompletionProvider
-from .emmet_support import emmet_integration
+try:
+    from .completion_provider import Jinja2HTMLCompletionProvider
+    from .emmet_support import emmet_integration
+except ImportError:
+    from completion_provider import Jinja2HTMLCompletionProvider
+    from emmet_support import emmet_integration
 
 # Configure logging
 logging.basicConfig(

@@ -19,7 +19,10 @@ from lsprotocol.types import (
     TextEdit
 )
 
-from .emmet_support import emmet_integration
+try:
+    from .emmet_support import emmet_integration
+except ImportError:
+    from emmet_support import emmet_integration
 
 
 class CompletionContext(Enum):

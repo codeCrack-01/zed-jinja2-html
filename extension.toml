@@ -16,14 +16,7 @@ args = ["-m", "server.main"]
 path = "./server"
 
 [grammars.jinja2_html]
-name = "Jinja2 HTML"
-path = "grammars/jinja2_html"
+repository = "https://github.com/nk9/tree-sitter-jinja2"
+rev = "a533cd3c33aea2acbb83d978ba4e423703085fd7"
 
-[languages.jinja2_html]
-name = "Jinja2 HTML"
-grammar = "jinja2_html"
-path_suffixes = ["j2", "jinja", "jinja2", "html.j2", "htm.j2"]
-line_comments = ["{#", "#}"]
-block_comment = ["{#", "#}"]
-language_servers = ["jinja2_html_lsp"]
-auto_indent_using_last_non_empty_line = true
+

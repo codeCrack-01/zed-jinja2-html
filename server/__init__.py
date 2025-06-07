@@ -2,6 +2,10 @@
 __version__ = "0.1.0"
 __author__ = "Jinja2 HTML LSP Contributors"
 
-from .main import main
+try:
+    from .main import main
+except ImportError:
+    # Handle case when imported as a module directly
+    from main import main
 
 __all__ = ["main"]

@@ -16,3 +16,21 @@
 2025-06-07 08:20:56,904 - pygls.feature_manager - INFO - Registered "textDocument/hover" with options "None"
 2025-06-07 08:20:56,905 - pygls.feature_manager - INFO - Registered "textDocument/didOpen" with options "None"
 2025-06-07 08:20:56,905 - pygls.feature_manager - INFO - Registered "textDocument/didChange" with options "None"
+2025-06-07 09:00:10,798 - pygls.feature_manager - INFO - Registered builtin feature exit
+2025-06-07 09:00:10,798 - pygls.feature_manager - INFO - Registered builtin feature initialize
+2025-06-07 09:00:10,798 - pygls.feature_manager - INFO - Registered builtin feature initialized
+2025-06-07 09:00:10,798 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didChange
+2025-06-07 09:00:10,798 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didClose
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didOpen
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature $/setTrace
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature shutdown
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didChange
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didClose
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didOpen
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature window/workDoneProgress/cancel
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature workspace/didChangeWorkspaceFolders
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered builtin feature workspace/executeCommand
+2025-06-07 09:00:10,799 - pygls.feature_manager - INFO - Registered "textDocument/completion" with options "None"
+2025-06-07 09:00:10,800 - pygls.feature_manager - INFO - Registered "textDocument/hover" with options "None"
+2025-06-07 09:00:10,800 - pygls.feature_manager - INFO - Registered "textDocument/didOpen" with options "None"
+2025-06-07 09:00:10,800 - pygls.feature_manager - INFO - Registered "textDocument/didChange" with options "None"

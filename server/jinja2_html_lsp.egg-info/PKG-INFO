@@ -376,23 +376,84 @@ Add custom template directories to search path:
 }
 ```
 
+## Debugging & Validation
+
+### Extension Validation
+
+The extension includes validation tools to help debug configuration issues:
+
+#### TOML Validator
+```bash
+python3 validate_toml.py
+```
+
+This script validates your `extension.toml` file and checks:
+- TOML syntax validity
+- Required fields presence
+- Language server configuration
+- Grammar repository settings
+- Directory structure
+
+#### Extension Test Suite
+```bash
+python3 test_extension.py
+```
+
+Comprehensive test suite that validates:
+- Extension directory structure
+- Configuration file validity
+- Python dependencies
+- Language server import/startup
+- Sample template processing
+
+### Error Detection
+
+To find specific TOML validation errors:
+
+1. **Python TOML validation**:
+   ```bash
+   python3 -c "import tomllib; print(tomllib.load(open('extension.toml', 'rb')))"
+   ```
+
+2. **Check extension structure**:
+   ```bash
+   # Verify required directories exist
+   ls -la languages/jinja2_html/config.toml
+   ls -la server/main.py
+   ```
+
+3. **Test language server manually**:
+   ```bash
+   cd server/
+   python3 -m main
+   ```
+
 ## Troubleshooting
 
 ### Common Issues
 
-1. **Language server not starting**
+1. **"Invalid extension.toml file" error**
+   - Run `python3 validate_toml.py` to see specific validation errors
+   - Ensure all required fields are present: `id`, `name`, `version`, `schema_version`, `authors`, `description`
+   - Check grammar configuration uses `repository` and `rev` fields, not local `path`
+   - Verify language configuration is in `languages/jinja2_html/config.toml`, not directly in `extension.toml`
+
+2. **Language server not starting**
    - Check Python installation: `python --version`
    - Verify dependencies: `pip list | grep pygls`
+   - Test server import: `cd server && python3 -c "import main"`
    - Check Zed logs: View → Developer → Open Logs
 
-2. **Completions not working**
+3. **Completions not working**
    - Ensure file has correct extension (`.j2`, `.jinja2`, etc.)
    - Check LSP connection in Zed status bar
+   - Verify language server binary path in extension config
    - Restart Zed IDE
 
-3. **Syntax highlighting missing**
-   - Verify grammar file is properly installed
+4. **Syntax highlighting missing**
+   - Verify grammar repository and revision are correct
    - Check file association in Zed settings
+   - Ensure grammar name matches in both `extension.toml` and `languages/jinja2_html/config.toml`
    - Clear Zed cache and restart
 
 ### Performance Tips

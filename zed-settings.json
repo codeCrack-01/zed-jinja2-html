@@ -1,0 +1,30 @@
+{
+  "languages": {
+    "Jinja2 HTML": {
+      "language_servers": ["jinja2_html_lsp"],
+      "format_on_save": "on",
+      "tab_size": 2,
+      "hard_tabs": false,
+      "preferred_line_length": 120
+    }
+  },
+  "lsp": {
+    "jinja2_html_lsp": {
+      "binary": {
+        "path": "python",
+        "arguments": ["-m", "main"]
+      },
+      "settings": {
+        "jinja2": {
+          "enable_emmet": true,
+          "enable_jinja_snippets": true,
+          "auto_close_tags": true,
+          "validate_on_type": true,
+          "completion_trigger_chars": ["<", "{", "%", "#", "."],
+          "hover_documentation": true,
+          "format_on_save": true
+        }
+      }
+    }
+  }
+}

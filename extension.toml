@@ -11,11 +11,12 @@ name = "Jinja2 HTML LSP"
 
 [language_servers.jinja2_html_lsp.binary]
 command = "python"
-args = ["main.py"]
+args = ["-m", "main"]
 path = "server"
 
 [grammars.jinja2_html]
-path = "grammars/jinja2_html"
+repository = "https://github.com/dbt-labs/tree-sitter-jinja2"
+rev = "main"
 
 [languages.jinja2_html]
 name = "Jinja2 HTML"

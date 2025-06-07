@@ -66,3 +66,35 @@
 2025-06-07 10:07:48,790 - pygls.feature_manager - INFO - Registered builtin feature window/workDoneProgress/cancel
 2025-06-07 10:07:48,790 - pygls.feature_manager - INFO - Registered builtin feature workspace/didChangeWorkspaceFolders
 2025-06-07 10:07:48,790 - pygls.feature_manager - INFO - Registered builtin feature workspace/executeCommand
+2025-06-07 20:43:03,802 - pygls.feature_manager - INFO - Registered builtin feature exit
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature initialize
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature initialized
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didChange
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didClose
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didOpen
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature $/setTrace
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature shutdown
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didChange
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didClose
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didOpen
+2025-06-07 20:43:03,803 - pygls.feature_manager - INFO - Registered builtin feature window/workDoneProgress/cancel
+2025-06-07 20:43:03,804 - pygls.feature_manager - INFO - Registered builtin feature workspace/didChangeWorkspaceFolders
+2025-06-07 20:43:03,804 - pygls.feature_manager - INFO - Registered builtin feature workspace/executeCommand
+2025-06-07 20:43:03,804 - pygls.feature_manager - INFO - Registered "textDocument/completion" with options "None"
+2025-06-07 20:43:03,804 - pygls.feature_manager - INFO - Registered "textDocument/hover" with options "None"
+2025-06-07 20:43:03,804 - pygls.feature_manager - INFO - Registered "textDocument/didOpen" with options "None"
+2025-06-07 20:43:03,805 - pygls.feature_manager - INFO - Registered "textDocument/didChange" with options "None"
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature exit
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature initialize
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature initialized
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didChange
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didClose
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature notebookDocument/didOpen
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature $/setTrace
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature shutdown
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didChange
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didClose
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature textDocument/didOpen
+2025-06-07 20:43:03,813 - pygls.feature_manager - INFO - Registered builtin feature window/workDoneProgress/cancel
+2025-06-07 20:43:03,814 - pygls.feature_manager - INFO - Registered builtin feature workspace/didChangeWorkspaceFolders
+2025-06-07 20:43:03,814 - pygls.feature_manager - INFO - Registered builtin feature workspace/executeCommand

@@ -1,0 +1,8 @@
+setup.py
+jinja2_html_lsp.egg-info/PKG-INFO
+jinja2_html_lsp.egg-info/SOURCES.txt
+jinja2_html_lsp.egg-info/dependency_links.txt
+jinja2_html_lsp.egg-info/entry_points.txt
+jinja2_html_lsp.egg-info/not-zip-safe
+jinja2_html_lsp.egg-info/requires.txt
+jinja2_html_lsp.egg-info/top_level.txt

@@ -1,0 +1,28 @@
+include README.md
+include LICENSE
+include extension.toml
+include install.sh
+include diagnose.py
+include example.html.j2
+
+recursive-include languages *.toml
+recursive-include grammars *.json
+recursive-include server *.py
+recursive-include server *.txt
+recursive-include server *.toml
+
+global-exclude __pycache__
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude .git*
+global-exclude .pytest_cache
+global-exclude .mypy_cache
+global-exclude .coverage
+global-exclude htmlcov
+global-exclude .tox
+global-exclude .env
+global-exclude venv
+global-exclude .venv

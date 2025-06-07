@@ -1,0 +1,29 @@
+id = "jinja2-html"
+name = "Jinja2 HTML"
+description = "Language server support for Jinja2 HTML templates with auto-completion, syntax highlighting, and Emmet snippets"
+version = "0.1.0"
+schema_version = 1
+authors = ["Zain Khan <program01code@gmail.com>"]
+repository = "https://github.com/codeCrack-01/zed-jinja2-html"
+
+[language_servers.jinja2-html-lsp]
+name = "Jinja2 HTML LSP"
+language = "jinja2-html"
+
+[language_servers.jinja2-html-lsp.binary]
+command = "python"
+args = ["-m", "server.main"]
+path = "./server"
+
+[grammars.jinja2-html]
+name = "Jinja2 HTML"
+path = "grammars/jinja2-html"
+
+[languages.jinja2-html]
+name = "Jinja2 HTML"
+grammar = "jinja2-html"
+path_suffixes = ["j2", "jinja", "jinja2", "html.j2", "htm.j2"]
+line_comments = ["{#", "#}"]
+block_comment = ["{#", "#}"]
+language_servers = ["jinja2-html-lsp"]
+auto_indent_using_last_non_empty_line = true

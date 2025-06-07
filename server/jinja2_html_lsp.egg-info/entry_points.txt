@@ -1,0 +1,2 @@
+[console_scripts]
+jinja2-html-lsp = main:main

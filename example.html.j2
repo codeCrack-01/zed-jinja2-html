@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title|default("Welcome") }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1>{{ site_name }}</h1>
+            <nav>
+                <ul class="nav-links">
+                    {% for item in navigation %}
+                    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            {% block content %}
+            <section class="hero">
+                <h2>{{ hero.title }}</h2>
+                <p>{{ hero.description|truncate(150) }}</p>
+                {% if hero.button_text %}
+                <a href="{{ hero.button_url }}" class="btn btn-primary">{{ hero.button_text }}</a>
+                {% endif %}
+            </section>
+
+            {% if products %}
+            <section class="products">
+                <h3>Featured Products</h3>
+                <div class="product-grid">
+                    {% for product in products %}
+                    <div class="product-card">
+                        <img src="{{ product.image }}" alt="{{ product.name }}">
+                        <h4>{{ product.name }}</h4>
+                        <p class="price">${{ product.price|round(2) }}</p>
+                        {% if product.on_sale %}
+                        <span class="badge sale">On Sale!</span>
+                        {% endif %}
+                        <form method="post" action="{{ url_for('add_to_cart') }}">
+                            {{ csrf_token() }}
+                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                            <input type="number" name="quantity" value="1" min="1" max="{{ product.stock }}">
+                            <button type="submit" class="btn btn-secondary">Add to Cart</button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+            <p class="no-products">No products available at the moment.</p>
+            {% endif %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <aside class="sidebar">
+        {% block sidebar %}
+        <div class="widget">
+            <h3>Categories</h3>
+            <ul>
+                {% for category in categories %}
+                <li>
+                    <a href="{{ url_for('category', slug=category.slug) }}">
+                        {{ category.name }} ({{ category.products|length }})
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="widget user-info">
+            <h3>Welcome, {{ user.name|title }}!</h3>
+            <p>You have {{ user.orders|length }} order{{ user.orders|length|pluralize }}.</p>
+            <a href="{{ url_for('profile') }}" class="btn btn-outline">View Profile</a>
+        </div>
+        {% else %}
+        <div class="widget login-form">
+            <h3>Login</h3>
+            <form method="post" action="{{ url_for('login') }}">
+                {{ csrf_token() }}
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+        {% endif %}
+        {% endblock %}
+    </aside>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>{{ company.description|safe }}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: {{ company.email }}</p>
+                    <p>Phone: {{ company.phone }}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        {% for social in company.social_links %}
+                        <a href="{{ social.url }}" target="_blank" rel="noopener">{{ social.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ moment().year }} {{ company.name }}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    {# JavaScript includes #}
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+
+    {# Analytics tracking #}
+    {% if config.ANALYTICS_ID %}
+    <script>
+        // Google Analytics or other tracking code
+        gtag('config', '{{ config.ANALYTICS_ID }}');
+    </script>
+    {% endif %}
+</body>
+</html>
